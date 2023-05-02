@@ -35,11 +35,11 @@ function Blog() {
 					return (
 						<div className="card shadow-lg p-4" key={index}>
 							<img src={val.image} alt="" />
-							<div className="card-body">
+							<div className="card-body mt-4">
 								<h3>{val.title}</h3>
-								<p className="pt-3 text-gray-600">{val.description}</p>
+								<p className="pt-3">{val.description}</p>
 							</div>
-							<div className="card-footer text-[#7e1c8c] pt-3">
+							<div className="card-footer text-[#d6a753] pt-3">
 								<Link to={val.path}>{val.name}</Link>
 							</div>
 						</div>

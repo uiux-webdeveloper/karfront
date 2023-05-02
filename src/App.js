@@ -7,11 +7,10 @@ import {
 	SingleService,
 	Industries,
 	SingleIndustry,
-	AdminDashboard,
 	Services,
 	Looking4Job,
 } from "./pages";
-import { Footer, Header, AdminProtectedRoute } from "./components";
+import { Footer, Header } from "./components";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 function App() {
@@ -25,14 +24,9 @@ function App() {
 				<Route path="/about" element={<About />} />
 				<Route path="/login" element={<Login />} />
 				<Route path="/services" element={<Services />} />
-				<Route path="/singleservice/:slug" element={<SingleService />} />
+				<Route path="/singleservice" element={<SingleService />} />
 				<Route path="/industries" element={<Industries />} />
-				<Route path="/singleindustry/:slug" element={<SingleIndustry />} />
-				{/* admin */}
-				<Route path="/dashboard" element={<AdminDashboard />} />
-				{/* <Route path="/dashboard" element={<AdminProtectedRoute />}>
-					<Route path="admin" element={<AdminDashboard />} />
-				</Route> */}
+				<Route path="/singleindustry" element={<SingleIndustry />} />
 			</Routes>
 			<Footer />
 		</BrowserRouter>

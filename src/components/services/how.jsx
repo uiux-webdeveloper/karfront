@@ -1,28 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
+import React from "react";
+
 import pic3 from "../../images/services/pic3.jpg";
 function How() {
-	const params = useParams();
-	const [singleService, setSingleService] = useState();
-
-	// get single service
-	const getSingleService = async () => {
-		try {
-			const { data } = await axios.get(
-				`http://localhost:4000/api/service/get-single-service/${params.slug}`
-			);
-			if (data?.success) {
-				setSingleService(data.singleService);
-			}
-		} catch (error) {
-			console.log(error);
-		}
-	};
-
-	useEffect(() => {
-		getSingleService();
-	}, []);
 	const data = [
 		{
 			title: "MultiTasking Experts",
@@ -46,7 +25,7 @@ function How() {
 				<img src={pic3} className="h-full w-full" alt="" />
 			</div>
 			<div className="col">
-				<h2 className="mb-4">{singleService?.howHeading}</h2>
+				<h2 className="mb-4">Data Analysis</h2>
 				<div className="card-containe grid-2">
 					{data.map((val, index) => {
 						return (

@@ -19,7 +19,7 @@ function extra() {
 	];
 	return (
 		<section className="extra-wrapper py-8">
-			<div className="heading mb-6">
+			<div className="heading mb-8">
 				<h2>Double your job search options with Robert Half</h2>
 				<p>
 					Extend your job search and find the right role for you, whether it’s on-site or remote

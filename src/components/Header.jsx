@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { ImSearch } from "react-icons/im";
-import { HiLocationMarker } from "react-icons/hi";
-import { GiSandsOfTime } from "react-icons/gi";
 import { HiBars3CenterLeft } from "react-icons/hi2";
 import { GrFormClose } from "react-icons/gr";
-import { FaIndustry } from "react-icons/fa";
-import { FaServicestack } from "react-icons/fa";
 
 function Header() {
 	const [bar, setbar] = useState(false);
@@ -15,30 +10,34 @@ function Header() {
 		setbar(!bar);
 	};
 
-	const data = [
-		{ name: "services", path: "/services", icons: <FaServicestack /> },
-		{ name: "Location", path: "/", icons: <HiLocationMarker /> },
-		{ name: "Time", path: "/", icons: <GiSandsOfTime /> },
-		{ name: "industry", path: "/industries", icons: <FaIndustry /> },
-	];
 	return (
-		<HeaderWrapper className="flex justify-between items-center py-6 px-6 shadow-md">
+		<HeaderWrapper className="flex-between">
 			<div className="logo">
 				<Link to="/">Karyarth</Link>
 			</div>
 
-			<ul className={`flex gap-4 ${bar && "mobile"}`}>
-				{data.map((val, index) => {
-					return (
-						<li key={index}>
-							<Link to={val.path} className="flex items-center gap-2">
-								<span className="hidden md:block">{val.icons}</span>
-								<span>{val.name}</span>
-							</Link>
-						</li>
-					);
-				})}
+			<ul className={`flex gap-8 items-center ${bar && "mobile"}`}>
+				<li>
+					<Link to="/">Home</Link>
+				</li>
+				<li>
+					<Link to="/">About</Link>
+				</li>
+				<li>
+					<Link to="/">Services</Link>
+				</li>
+
+				<li>
+					<Link to="/">Industry</Link>
+				</li>
+
+				<li>
+					<Link to="/" className="cta-2">
+						Connect
+					</Link>
+				</li>
 			</ul>
+
 			<div className="hamberger" onClick={barHandler}>
 				{bar ? <HiBars3CenterLeft className="bar" /> : <GrFormClose className="bar" />}
 			</div>
@@ -47,6 +46,13 @@ function Header() {
 }
 
 const HeaderWrapper = styled.header`
+	box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+	padding: 15px 4%;
+	z-index: 1000;
+	position: fixed;
+	width: 100%;
+	background: var(--whiteColor);
+
 	.bar {
 		font-size: 2rem;
 		cursor: pointer;
@@ -58,22 +64,13 @@ const HeaderWrapper = styled.header`
 		margin-top: -50rem;
 	}
 
-	.logo {
-		color: var(--primaryColor);
-	}
-
-	span {
-		&:nth-child(1) {
-			color: var(--primaryColor);
-		}
-	}
 	@media screen and (max-width: 768px) {
 		ul {
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			position: absolute;
-			top: 10%;
+			top: 100%;
 			right: 0%;
 			z-index: 10;
 			background: var(--primaryColor);
@@ -83,7 +80,7 @@ const HeaderWrapper = styled.header`
 			border-radius: 20px;
 
 			li {
-				line-height: 3rem;
+				line-height: 1rem;
 				color: var(--whiteColor);
 			}
 		}

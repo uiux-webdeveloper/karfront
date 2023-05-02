@@ -1,16 +1,15 @@
 import React from "react";
-import { Banner, Selection, Service, Location, Blog } from "../components";
+import { Banner, Selection, Help, Blog, HomeTestimonial, Counter } from "../components";
 
 function Home() {
 	return (
 		<>
 			<Banner />
-			<main>
-				<Selection />
-				<Service />
-				<Location />
-				<Blog />
-			</main>
+			<Counter />
+			<Selection />
+			<Help />
+			<Blog />
+			<HomeTestimonial />
 		</>
 	);
 }

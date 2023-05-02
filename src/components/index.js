@@ -1,11 +1,11 @@
 import Banner from "./Banner";
 import Selection from "./Selection";
-import Service from "./Service";
-import Location from "./Location";
+import Help from "./help";
 import Blog from "./Blog";
 import Header from "./Header";
 import Footer from "./Footer";
-import AdminProtectedRoute from "./admin/adminProtectedRoute";
+import HomeTestimonial from "./testimonial";
+import Counter from "./counter";
 
 // looking4job
 import Banner4Job from "./looking4Job/banner4Job";
@@ -30,11 +30,9 @@ export {
 	Extra,
 	Banner4JobBlog,
 	Selection,
-	Service,
-	Location,
+	Help,
 	Blog,
 	Footer,
-	AdminProtectedRoute,
 	ServicesBanner,
 	Why,
 	What,
@@ -43,4 +41,6 @@ export {
 	IndustriesBanner,
 	IWhat,
 	IWhy,
+	HomeTestimonial,
+	Counter,
 };

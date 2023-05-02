@@ -1,126 +1,228 @@
-/* google font */
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;1,700&family=Roboto:wght@300;400;500;700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* tailwind css apply */
+/* tailwindcss style apply */
 
-/* industry */
 .grid-2 {
-	@apply grid sm:grid-cols-1 lg:grid-cols-2 gap-6;
+	@apply grid grid-cols-1 lg:grid-cols-2 gap-6;
 }
 
-/* service */
 .grid-3 {
-	@apply grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center items-center;
+	@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center items-center;
 }
 
-/* location */
 .grid-4 {
-	@apply grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center;
+	@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center;
 }
 
-.hover {
-	@apply hover:brightness-50 brightness-75 transition-all;
+.grid-4-footer {
+	@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center;
 }
-
-/* login */
+.flex-between {
+	@apply flex justify-between items-center;
+}
 
 .flex-center {
-	@apply flex flex-col justify-center items-center;
+	@apply flex justify-center items-center;
+}
+
+.heading-responsive {
+	@apply mb-12 flex flex-col lg:flex-row lg:justify-between lg:items-center space-y-4;
 }
 
 :root {
-	--bigFont: 3rem;
-	--mediumFont: 2rem;
-	--smallFont: 1.5rem;
-	--smallestFont: 1rem;
-	--primaryColor: #7e1c8c;
-	--secondryColor: #f05b32;
-	--tertiaryColor: #3734d5;
-	--bgColor: #f3f0eb;
+	--primaryColor: #0f5e53;
+	--secondryColor: #d6a753;
+	--tertiaryColor: #96e4fe;
+	--bgColor: #f5f7fa;
 	--whiteColor: #fff;
+	--bgColor: #f7f7f7;
 	--blackColor: #000;
-	--grayColor: rgb(173, 171, 171);
+	--grayColor: #4b5563;
+	--fiftypx: 50px;
+	--thirtyfivepx: 35px;
+	--thirtypx: 30px;
+	--twentyfourpx: 24px;
+	--twentypx: 20px;
+	--sixteenpx: 16px;
+	--fourteenpx: 14px;
+	--twelvepx: 12px;
 }
 
 * {
-	box-sizing: border-box;
-	padding: 0;
-	text-decoration: none;
 	margin: 0;
-	outline: none;
-	font-family: "Roboto Condensed", sans-serif;
+	padding: 0;
+	list-style: none;
+	box-sizing: border-box;
+	font-family: "Rubik", sans-serif;
 	/* border: 1px solid red; */
 }
-
-h1 {
-	font-size: var(--bigFont);
-	font-weight: 700;
-}
-h2 {
-	font-size: var(--mediumFont);
-	font-weight: 500;
-}
-
-h3 {
-	font-size: var(--smallFont);
-	font-weight: 400;
-}
-
-p {
-	font-size: var(--smallestFont);
-	font-weight: 300;
-}
-
 /* CSS */
-.cta {
+
+.cta-2 {
 	background-color: var(--primaryColor);
-	border: 0;
-	border-radius: 56px;
-	color: #fff;
+	border: 2px solid var(--secondryColor);
+	border-radius: 30px;
+	box-shadow: #422800 4px 4px 0 0;
+	color: var(--whiteColor);
 	cursor: pointer;
 	display: inline-block;
-	font-family: system-ui, -apple-system, system-ui, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue",
-		sans-serif;
+	font-weight: 400;
 	font-size: 18px;
-	font-weight: 600;
-	outline: 0;
-	padding: 16px 21px;
-	position: relative;
+	padding: 0 18px;
+	line-height: 40px;
 	text-align: center;
 	text-decoration: none;
-	transition: all 0.3s;
 	user-select: none;
 	-webkit-user-select: none;
 	touch-action: manipulation;
 }
 
-.cta:before {
-	background-color: initial;
-	background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
-	border-radius: 125px;
-	content: "";
-	height: 50%;
-	left: 4%;
-	opacity: 0.5;
-	position: absolute;
-	top: 0;
-	transition: all 0.3s;
-	width: 92%;
+.cta-2:active {
+	box-shadow: var(--secondryColor) 2px 2px 0 0;
+	transform: translate(2px, 2px);
 }
 
-.cta:hover {
-	box-shadow: rgba(255, 255, 255, 0.2) 0 3px 15px inset, rgba(0, 0, 0, 0.1) 0 3px 5px,
-		rgba(0, 0, 0, 0.1) 0 10px 13px;
-	transform: scale(1.05);
+@media (min-width: 768px) {
+	.cta-2 {
+		min-width: 120px;
+		padding: 0 25px;
+	}
+}
+
+/* CSS */
+.cta {
+	font-family: "Open Sans", sans-serif;
+	font-size: 16px;
+	letter-spacing: 2px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #000;
+	cursor: pointer;
+	border: 3px solid;
+	padding: 0.25em 0.5em;
+	box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+	position: relative;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+.cta:active {
+	box-shadow: 0px 0px 0px 0px;
+	top: 5px;
+	left: 5px;
 }
 
 @media (min-width: 768px) {
 	.cta {
-		padding: 16px 48px;
+		padding: 0.25em 0.75em;
+	}
+}
+a {
+	text-decoration: none;
+}
+
+h1 {
+	font-size: var(--fiftypx);
+	font-weight: 600;
+}
+
+h2 {
+	font-size: var(--thirtypx);
+	font-weight: 500;
+}
+
+h3 {
+	font-size: var(--twentyfourpx);
+	font-weight: 400;
+}
+
+h4 {
+	font-size: var(--twentypx);
+}
+h5 {
+	font-size: var(--sixteenpx);
+}
+
+h6 {
+	font-size: var(--fourteenpx);
+}
+
+p {
+	font-size: var(--fourteenpx);
+	font-weight: 300;
+}
+
+::placeholder {
+	font-size: var(--fourteenpx);
+}
+
+label {
+	font-size: var(--twelvepx);
+	font-weight: 500;
+}
+
+section {
+	padding: 40px 3%;
+}
+
+@media screen and (max-width: 1024px) {
+	h1 {
+		font-size: var(--thirtyfivepx);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	h2 {
+		font-size: var(--twentyfourpx);
+	}
+	h3 {
+		font-size: var(--twentypx);
+	}
+
+	h4 {
+		font-size: var(--sixteenpx);
+	}
+
+	h5 {
+		font-size: var(--fourteenpx);
+	}
+
+	.cta {
+		font-size: var(--fourteenpx);
+		padding: 10px 12px;
+	}
+}
+
+/* CSS */
+.cta {
+	font-family: "Open Sans", sans-serif;
+	font-size: 16px;
+	letter-spacing: 2px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #000;
+	cursor: pointer;
+	border: 3px solid;
+	padding: 0.25em 0.5em;
+	box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+	position: relative;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+.cta:active {
+	box-shadow: 0px 0px 0px 0px;
+	top: 5px;
+	left: 5px;
+}
+
+@media (min-width: 768px) {
+	.cta {
+		padding: 0.25em 0.75em;
 	}
 }
 
@@ -128,13 +230,13 @@ p {
 	padding: 2rem;
 	text-align: center;
 }
-main {
-	max-width: 920px;
-	margin: auto;
-}
-
 section {
 	animation: aos 0.5s linear;
+	padding: 20px 4%;
+}
+
+footer {
+	padding: 0 4%;
 }
 
 @keyframes aos {
@@ -148,15 +250,13 @@ section {
 	}
 }
 
-@media screen and (max-width: 768px) {
-	h1 {
-		font-size: var(--mediumFont);
+@keyframes counter {
+	from {
+		color: var(--secondryColor);
+		filter: brightness(50%);
 	}
-	h2 {
-		font-size: var(--smallFont);
-	}
-
-	main {
-		padding: 0 6%;
+	to {
+		color: var(--primaryColor);
+		filter: brightness(100%);
 	}
 }

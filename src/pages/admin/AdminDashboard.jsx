@@ -105,6 +105,7 @@ function AdminDashboard() {
 									accept="image/*"
 									value={photo}
 									onChange={(e) => setPhoto(e.target.files[0])}
+									multiple
 								/>
 							</label>
 						</div>

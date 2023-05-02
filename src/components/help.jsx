@@ -5,7 +5,8 @@ import { MdBiotech } from "react-icons/md";
 import { TbEqualNot } from "react-icons/tb";
 import { HiLightBulb } from "react-icons/hi";
 import { Link } from "react-router-dom";
-function Service() {
+import styled from "styled-components";
+function Help() {
 	const data = [
 		{
 			title: "Finance & Accounting",
@@ -37,22 +38,27 @@ function Service() {
 			description:
 				"Accounting and accounts payable clerks, senior accountants, controllers, and more",
 		},
+		{
+			title: "Legal",
+			icons: <TbEqualNot />,
+			description:
+				"Accounting and accounts payable clerks, senior accountants, controllers, and more",
+		},
 	];
 	return (
-		<section className="service-wrapper py-8">
+		<HelpWrapper>
 			<h3 className="center">
 				Whether you need to find top talent, your next great job opportunity or a consulting
 				solution for managing your business and resourcing challenges, we can help.
 			</h3>
-			<div className="grid-3 card-container">
+
+			<div className="grid-3 card-container mt-4">
 				{data.map((val, index) => {
 					return (
-						<div className="Card shadow-lg p-6 h-full border-y border-purple-900" key={index}>
-							<div className="card-body flex items-center gap-2 mb-3">
-								<p className="text-purple-900 text-[40px]"> {val.icons}</p>
-								<h3 className="tracking-tighter">{val.title}</h3>
-							</div>
-							<div className="card-footer">
+						<div className="card" key={index}>
+							<figure>{val.icons}</figure>
+							<div className="card-body">
+								<h3>{val.title}</h3>
 								<p>{val.description}</p>
 							</div>
 						</div>
@@ -65,8 +71,19 @@ function Service() {
 					Find An Office
 				</Link>
 			</div>
-		</section>
+		</HelpWrapper>
 	);
 }
 
-export default Service;
+const HelpWrapper = styled.section`
+	.card {
+		figure {
+			background: var(--primaryColor);
+			padding: 1rem;
+			font-size: 2rem;
+			color: var(--secondryColor);
+		}
+	}
+`;
+
+export default Help;
